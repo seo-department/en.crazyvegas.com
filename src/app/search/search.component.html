@@ -1,0 +1,19 @@
+<ais-instantsearch [config]="config">
+    <ais-search-box></ais-search-box>
+        <ais-hits>
+            <ng-template let-hits="hits">
+                    <!-- <div class="col-sm-8"> -->
+                <ol class="ais-Hits-list">
+                        <li *ngFor="let hit of hits" class="ais-Hits-item">
+                            <!-- <div *ngIf="hit ==''"> -->
+                            <a [routerLink]="[hit.slug]" target="_blank">
+                                <h1>{{hit.title}}</h1>
+                                <div class="search-filter">{{hit.body}} </div>
+                            </a>
+                            <!-- </div> -->
+                    </li>
+                </ol>
+                <!-- </div> -->
+            </ng-template>
+        </ais-hits>
+</ais-instantsearch>
